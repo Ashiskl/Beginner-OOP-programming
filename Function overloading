@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    void area(int side) {
+        float area = side * side;
+        cout << "Square area: " << area << endl;
+    }
+
+    void area(int length, int breadth) {
+        float area = length * breadth;
+        cout << "Rectangle area: " << area << endl;
+    }
+
+    void area(float radius) {
+        float area = 3.14 * radius * radius;
+        cout << "Circle area: " << area << endl;
+    }
+
+    void area(float base, float height) {
+        float area = 0.5 * base * height;
+        cout << "Triangle area: " << area << endl;
+    }
+};
+
+int main() {
+    Shape shape;
+
+    int sl, rl, rb;
+    float rad, th, tb;
+
+    cout << "Enter side of square: ";
+    cin >> sl;
+    shape.area(sl);
+
+    cout << "Enter length and breadth of rectangle: ";
+    cin >> rl >> rb;
+    shape.area(rl, rb);
+
+    cout << "Enter radius of circle: ";
+    cin >> rad;
+    shape.area(rad);
+
+    cout << "Enter base and height of triangle: ";
+    cin >> tb >> th;
+    shape.area(tb, th);
+
+    return 0;
+}
