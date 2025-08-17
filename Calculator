@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+
+class calculation {//public ,private,protected
+    int a, b, c;
+public://
+    void input();//non returnable
+    void addition();
+    void subtraction();
+    void multiplication();
+    void division();
+    void menu();
+};//class ended
+
+void calculation::input() {//void classname ::(scope  resolution operator) function
+    cout<<"Enter value for a: ";
+    cin>>a;
+    cout<<"Enter value for b: ";
+    cin>>b;
+}
+
+void calculation::addition() {
+    c = a + b;
+    cout << "Result (a + b) = "<<c<< endl;//new line
+}
+
+void calculation::subtraction() {
+    c = a - b;
+    cout << "Result (a - b) = " <<c<< endl;
+}
+
+void calculation::multiplication() {
+    c = a * b;
+    cout << "Result (a * b) = " <<c<< endl;
+}
+
+void calculation::division() {
+    
+        c = a / b;
+        cout << "Result (a / b) = " <<
+		c<< endl;
+    
+    
+}
+
+void calculation::menu() {
+    cout << "\nMenu: \n";
+    cout << "1. Addition\n";
+    cout << "2. Subtraction\n";
+    cout << "3. Multiplication\n";
+    cout << "4. Division\n";
+    cout << "5. Exit\n";
+    cout << "Enter your choice: ";
+}
+
+int main() {
+    calculation obj;
+    int choice;
+
+    obj.input();
+
+    do {//do while loop 
+        obj.menu();
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                obj.addition();
+                break;
+            case 2:
+                obj.subtraction();
+                break;
+            case 3:
+                obj.multiplication();
+                break;
+            case 4:
+                obj.division();
+                break;
+            case 5:
+                cout << "Exiting the program...\n";
+                break;
+            default://cas1,2,3,4,5, default will print
+                cout << "Invalid choice! Please try again.\n";
+        }
+    } while (choice != 5);
+
+    return 0;
+}
