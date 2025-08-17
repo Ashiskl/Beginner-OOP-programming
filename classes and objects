@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+class hospital
+{
+	string name;
+	string a;
+	string paitent_name;
+	string hname;
+	public:
+		hospital()//default 
+		{
+			name="dy patil hospital";
+			cout<<name;
+		}
+		hospital(string pname)//paramemter
+		{
+			paitent_name=pname;
+			
+			cout<<"\npatient name"<<paitent_name;
+			
+			
+			
+		}
+		//classname(class & username) copy constructor
+		hospital(hospital & obj12){
+			hname=obj12.name;
+			cout<<"\ncopy constructor"<<hname;
+			
+		}
+		//~classname()  destructor
+		~hospital(){
+			cout<<"here object ends\n";
+		}
+};
+int main()
+{
+	string a;
+	hospital obj;
+	cin>>a;
+	hospital obj1(a);
+	hospital obj12=obj;  
+}
